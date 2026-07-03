@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ══════════════════════════════════════════════════
+   DARK THEME (default)
+══════════════════════════════════════════════════ */
+:root {
+  --c-bg:           #0c0c0f;
+  --c-card:         rgba(255,255,255,0.04);
+  --c-card-solid:   #131318;
+  --c-border:       rgba(255,255,255,0.09);
+  --c-text1:        #f1f5f9;
+  --c-text2:        #cbd5e1;
+  --c-text3:        #94a3b8;
+  --c-text4:        #64748b;
+  --c-input-bg:     rgba(255,255,255,0.06);
+  --c-input-border: rgba(255,255,255,0.12);
+  --c-input-color:  #f1f5f9;
+  --c-nav-bg:       rgba(12,12,15,0.92);
+  --c-table-bg:     transparent;
+  --c-table-head:   rgba(255,255,255,0.04);
+  --c-table-headtxt:#94a3b8;
+  --c-table-hover:  rgba(255,255,255,0.04);
+  --c-table-border: rgba(255,255,255,0.06);
+  --c-scroll-thumb: rgba(255,255,255,0.12);
+}
+
+/* ══════════════════════════════════════════════════
+   LIGHT THEME — applied when html has class theme-light
+══════════════════════════════════════════════════ */
+.theme-light {
+  --c-bg:           #f0f4f8;
+  --c-card:         #ffffff;
+  --c-card-solid:   #ffffff;
+  --c-border:       rgba(0,0,0,0.1);
+  --c-text1:        #0f172a;
+  --c-text2:        #1e293b;
+  --c-text3:        #475569;
+  --c-text4:        #94a3b8;
+  --c-input-bg:     #ffffff;
+  --c-input-border: rgba(0,0,0,0.18);
+  --c-input-color:  #0f172a;
+  --c-nav-bg:       rgba(255,255,255,0.97);
+  --c-table-bg:     #ffffff;
+  --c-table-head:   #f8fafc;
+  --c-table-headtxt:#475569;
+  --c-table-hover:  #f8fafc;
+  --c-table-border: rgba(0,0,0,0.08);
+  --c-scroll-thumb: rgba(0,0,0,0.15);
+}
+
+/* ══════════════════════════════════════════════════
+   BASE
+══════════════════════════════════════════════════ */
+@layer base {
+  html {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background: var(--c-bg);
+    color: var(--c-text1);
+    transition: background 0.25s, color 0.25s;
+    margin: 0;
+  }
+  * { box-sizing: border-box; }
+}
+
+@layer components {
+  .scrollbar-thin::-webkit-scrollbar { width: 4px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: var(--c-scroll-thumb); border-radius: 9999px; }
+}
+
+/* ── Glass card ── */
+.glass-card {
+  background:  var(--c-card) !important;
+  border: 1px solid var(--c-border) !important;
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ── Stat card ── */
+.stat-card {
+  background: var(--c-card) !important;
+  border: 1px solid var(--c-border) !important;
+  border-radius: 14px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Table ── */
+table.dark-table { background: var(--c-table-bg) !important; width: 100%; }
+table.dark-table thead { background: var(--c-table-head) !important; }
+table.dark-table thead th {
+  color: var(--c-table-headtxt) !important;
+  background: var(--c-table-head) !important;
+  font-size: 0.7rem !important; font-weight: 600 !important;
+  letter-spacing: 0.08em !important; text-transform: uppercase !important;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid var(--c-table-border) !important;
+}
+table.dark-table tbody tr {
+  background: transparent !important;
+  border-bottom: 1px solid var(--c-table-border) !important;
+  transition: background 0.12s;
+}
+table.dark-table tbody tr:last-child { border-bottom: none !important; }
+table.dark-table tbody tr:hover { background: var(--c-table-hover) !important; }
+table.dark-table tbody td {
+  color: var(--c-text2) !important;
+  font-size: 0.85rem !important; padding: 12px 16px !important;
+  background: transparent !important;
+}
+
+/* ── Form inputs — use CSS vars ── */
+.dark-input {
+  background: var(--c-input-bg) !important;
+  border: 1px solid var(--c-input-border) !important;
+  border-radius: 8px;
+  color: var(--c-input-color) !important;
+  font-size: 0.875rem; padding: 8px 12px; width: 100%;
+  transition: border-color 0.15s; outline: none;
+}
+.dark-input::placeholder { color: var(--c-text4) !important; }
+.dark-input:focus {
+  border-color: rgba(99,102,241,0.6) !important;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.12) !important;
+}
+.dark-input option {
+  background: var(--c-card-solid);
+  color: var(--c-input-color);
+}
+
+/* ── Top nav — uses CSS vars ── */
+.top-nav {
+  position: sticky; top: 0; z-index: 50;
+  height: 58px; display: flex; align-items: center;
+  justify-content: space-between; padding: 0 24px;
+  background: var(--c-nav-bg);
+  border-bottom: 1px solid var(--c-border);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+}
+
+/* ── Nav links ── */
+.nav-link {
+  display: flex; align-items: center; gap: 6px; padding: 6px 12px;
+  border-radius: 8px; font-size: 0.82rem; font-weight: 500;
+  color: var(--c-text3); transition: all 0.15s;
+  white-space: nowrap; text-decoration: none;
+  border: 1px solid transparent;
+}
+.nav-link:hover  { color: var(--c-text1); background: var(--c-card); }
+.nav-link.active {
+  color: var(--c-text1); background: var(--c-card);
+  border-color: var(--c-border);
+}
+
+/* ══════════════════════════════════════════════════
+   BADGES — work in both themes
+══════════════════════════════════════════════════ */
+.badge-success { background:rgba(34,197,94,0.12);  color:#4ade80; border:1px solid rgba(34,197,94,0.25);  border-radius:9999px; display:inline-flex; align-items:center; padding:2px 8px; font-size:0.7rem; font-weight:600; }
+.badge-warning { background:rgba(245,158,11,0.12); color:#fbbf24; border:1px solid rgba(245,158,11,0.25); border-radius:9999px; display:inline-flex; align-items:center; padding:2px 8px; font-size:0.7rem; font-weight:600; }
+.badge-danger  { background:rgba(239,68,68,0.12);  color:#f87171; border:1px solid rgba(239,68,68,0.25);  border-radius:9999px; display:inline-flex; align-items:center; padding:2px 8px; font-size:0.7rem; font-weight:600; }
+.badge-info    { background:rgba(99,102,241,0.12); color:#818cf8; border:1px solid rgba(99,102,241,0.25);  border-radius:9999px; display:inline-flex; align-items:center; padding:2px 8px; font-size:0.7rem; font-weight:600; }
+.badge-gray    { background:rgba(148,163,184,0.12);color:#94a3b8; border:1px solid rgba(148,163,184,0.2);  border-radius:9999px; display:inline-flex; align-items:center; padding:2px 8px; font-size:0.7rem; font-weight:600; }
+.badge-purple  { background:rgba(168,85,247,0.12); color:#c084fc; border:1px solid rgba(168,85,247,0.25);  border-radius:9999px; display:inline-flex; align-items:center; padding:2px 8px; font-size:0.7rem; font-weight:600; }
+
+/* Light mode badge overrides */
+.theme-light .badge-success { background:rgba(22,163,74,0.1);  color:#16a34a; border-color:rgba(22,163,74,0.3);  }
+.theme-light .badge-warning { background:rgba(180,83,9,0.1);   color:#b45309; border-color:rgba(180,83,9,0.3);  }
+.theme-light .badge-danger  { background:rgba(220,38,38,0.1);  color:#dc2626; border-color:rgba(220,38,38,0.3); }
+.theme-light .badge-info    { background:rgba(79,70,229,0.1);  color:#4338ca; border-color:rgba(79,70,229,0.3); }
+.theme-light .badge-gray    { background:rgba(71,85,105,0.08); color:#475569; border-color:rgba(71,85,105,0.2); }
+.theme-light .badge-purple  { background:rgba(124,58,237,0.1); color:#6d28d9; border-color:rgba(124,58,237,0.3);}
+
+/* ══════════════════════════════════════════════════
+   LIGHT MODE — dashboard page background
+══════════════════════════════════════════════════ */
+.theme-light .dashboard-page { background: #f0f4f8 !important; }
+.theme-light main h1 { color: #0f172a !important; }
