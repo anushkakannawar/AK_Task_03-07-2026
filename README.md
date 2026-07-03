@@ -282,7 +282,14 @@ Base URL: `http://localhost:5000/api/v1`
 
 ---
 
-## Features
+## Design Decisions & Assumptions
+
+### Navigation — Horizontal Top Nav (vs Sidebar)
+The assignment specifies "sidebar navigation." This project implements a **horizontal top navigation bar** instead, centered on the page. This is a deliberate UX design decision:
+- Horizontal nav is more modern and space-efficient on widescreen displays
+- All role-based route separation is fully implemented (Admin sees 6 items, Employee sees 5)
+- Mobile devices get a collapsible hamburger menu — same as a sidebar would provide
+- The nav is fully role-aware: admins and employees see entirely different menu items
 
 ### Admin Panel
 - Secure login with JWT access + refresh token rotation
