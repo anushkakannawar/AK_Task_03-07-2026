@@ -284,12 +284,11 @@ Base URL: `http://localhost:5000/api/v1`
 
 ## Design Decisions & Assumptions
 
-### Navigation — Horizontal Top Nav (vs Sidebar)
-The assignment specifies "sidebar navigation." This project implements a **horizontal top navigation bar** instead, centered on the page. This is a deliberate UX design decision:
-- Horizontal nav is more modern and space-efficient on widescreen displays
-- All role-based route separation is fully implemented (Admin sees 6 items, Employee sees 5)
-- Mobile devices get a collapsible hamburger menu — same as a sidebar would provide
-- The nav is fully role-aware: admins and employees see entirely different menu items
+### Navigation — Vertical Sidebar (Role-Aware)
+This project implements a vertical left **Sidebar navigation** for all layouts, satisfying the assignment specifications:
+- Stays persistent on wide displays and slides out of view on mobile screens (triggered by a hamburger button).
+- Fully role-aware menu options (Admin sees 6 options: Dashboard, Employees, Departments, Attendance, Leaves, Payroll; Employee sees 5 options: Dashboard, My Profile, Attendance, My Leaves, My Payroll).
+- Integrated layout controls including light/dark theme toggling and a sign-out trigger.
 
 ### Admin Panel
 - Secure login with JWT access + refresh token rotation
