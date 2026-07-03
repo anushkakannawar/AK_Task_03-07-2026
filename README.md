@@ -1,8 +1,23 @@
 # HR & Employee Management System
 
-A full-stack HR Management System built as a technical assignment for **NeoWesolutize Technology**.
+A comprehensive, full-stack HR and Employee Management platform designed to streamline workforce administration. It features a centralized dashboard for HR administrators to manage employee records, attendance, leave approvals, and payroll, alongside a secure self-service portal for employees to track their own data.
 
-**Tech Stack:** React JS · Tailwind CSS · Node.js · Express.js · MySQL · JWT Auth · Recharts
+### 🛠 Technology Stack
+
+![React JS](https://img.shields.io/badge/React_JS-61DAFB?logo=react&logoColor=black&style=flat)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwindcss&logoColor=white&style=flat)
+![Node JS](https://img.shields.io/badge/Node_JS-339933?logo=nodedotjs&logoColor=white&style=flat)
+![Express JS](https://img.shields.io/badge/Express_JS-000000?logo=express&logoColor=white&style=flat)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white&style=flat)
+
+---
+
+| Layer | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Frontend** | React JS | Component-based UI library |
+| **Styling** | Tailwind CSS | Utility-first CSS framework |
+| **Backend** | Node JS + Express JS | Server-side runtime and web framework |
+| **Database** | MySQL | Relational database management system |
 
 ---
 
